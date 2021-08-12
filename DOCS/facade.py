@@ -574,8 +574,6 @@ if __name__=="__main__":
     rt(212)
     fd(400)
     end_fill()
-    penup()
-    goto(0,0)
     #continuite des triangles
     deplacer(-230,247)
     pensize(1.5)
