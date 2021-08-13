@@ -255,4 +255,4 @@ forward(98)
 penup()
 
 
-turtle.done()
+done()
