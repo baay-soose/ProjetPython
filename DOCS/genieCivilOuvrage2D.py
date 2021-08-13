@@ -172,6 +172,6 @@ def ellipse(r):
     Résultats : ellipse
     Hypothèses : -
     """
+    left(90)
     for loop in range(2):
-        left(90)
         circle(r/2,90)
