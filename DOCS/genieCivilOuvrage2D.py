@@ -3,35 +3,71 @@ triangle, trapeze, carre, polygone, losange, Ellipse, demi-cercle
 """
 from turtle import *
 
-# Fonction carre
-# entree : cote
 def deplacer(x,y):
     up() #relever le crayon
-    goto(x, y) # reculer en haut à gauche
+    goto(x, y) # deplacer en haut à gauche
     down() #baisser le crayon
     
 def carre(cote):
-    """ Fonction dessine carre python turtle """    
+    """
+    Commentaires de spécification
+    Bloc carre
+    Objectif : Ce bloc permet de dessiner un carre
+    Méthode : On dessine un carre avec le module turtle
+    Besoins : cote, couleur et couleur2 (la couleur 2 c'est pour une éventuelle couleur de fond)
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : carre
+    Hypothèses : -
+    """
     for i in range(4) :
         forward(cote)
         left(90)
 
-# Fonction cercle       
-# entree : rayon 
 def cercle(rayon):
-    """ Fonction dessine cercle python turtle """    
+    """
+    Commentaires de spécification
+    Bloc cercle
+    Objectif : Ce bloc permet de dessiner un cercle
+    Méthode : On dessine un cercle avec le module turtle
+    Besoins : rayon, couleur et couleur2 (la couleur 2 c'est pour une éventuelle couleur de fond)
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : cercle
+    Hypothèses : -
+    """   
     circle(rayon)
-# Fonction demi-cercle       
-# entree : rayon     
+  
 def demicercle(rayon):
-    """ Fonction dessine demi-cercle python turtle """    
+    """
+    Commentaires de spécification
+    Bloc demi_cercle
+    Objectif : Ce bloc permet de dessiner un demi_cercle
+    Méthode : On dessine un demi_cercle avec le module turtle
+    Besoins : rayon
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : demi_cercle
+    Hypothèses : -
+    """
     circle(rayon, 180)
-
-# Fonction rectangle
-# entree longueur, largeur    
+  
 def rectangle(longueur, largeur):
-    """ Fonction rectangle ellipse python turtle """
-       
+    """
+    Commentaires de spécification
+    Bloc rectangle
+    Objectif : Ce bloc permet de dessiner un rectangle
+    Méthode : On dessine un rectangle avec le module turtle
+    Besoins : longueur, largeur, couleur et couleur2 (la couleur 2 c'est pour une éventuelle couleur de fond)
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : rectangle
+    Hypothèses : -
+    """       
     for i in range(2):
         width(1.5)
         forward(longueur)
@@ -39,18 +75,25 @@ def rectangle(longueur, largeur):
         forward(largeur)
         left(90)
 
-# Fonction  triangle 
-# entree : a  b et c
 def triangle(a,b,c):
-    """ Fonction dessine triangle python turtle """    
+    """
+    Commentaires de spécification
+    Bloc triangle
+    Objectif : Ce bloc permet de dessiner un triangle
+    Méthode : On dessine un triangle avec le module turtle
+    Besoins : cote, couleur et couleur2 (la couleur 2 c'est pour une éventuelle couleur de fond)
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : triangle
+    Hypothèses : -
+    """
     forward(a)  
     rt(360/3)
     forward(b)
     rt(360/3)  
     forward(c)
 
-#Fonction triangle rectangle 
-# entree : largeur hauteur
 def triangleRectangle(LARGEUR, HAUTEUR):
     """ Fonction dessine triangle rectangle python turtle """    
     forward(LARGEUR)  #Avance de d'un tiers de la largeur
@@ -59,38 +102,76 @@ def triangleRectangle(LARGEUR, HAUTEUR):
     pensize(3)  #Change l'épaisseur du tracé
     home()  #Retourne à la maison     
 
-# Fonction polygone
-# entree : n le type de polygone et le cote en  px
 def polygone(n,cote):
     for i in range(n):
         forward(cote)
         lt(360/n)
-
-# Fonction losange
-# entree : cote   
+ 
 def losange(cote):
-    """ Fonction dessine losange python turtle """    
+    """
+    Commentaires de spécification
+    Bloc losange
+    Objectif : Ce bloc permet de dessiner un losange
+    Méthode : On dessine un losange avec le module turtle
+    Besoins : cote
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : losange
+    Hypothèses : -
+    """    
     for i in range(2):
         forward(cote)
         left(120)
         forward(cote)
         left(60)
 
-#Fonction : Ellipse
-#entree : rad
-def ellipse(rad): 
-    """ Fonction dessine ellipse python turtle """    
-    circle(rad,90) 
-    circle(rad//2,90) 
+def trapeze(cote1,
+            cote2,
+            cote3,
+            cote4,
+            couleur,
+            couleur2='black'):
+    """
+    Commentaires de spécification
+    Bloc trapeze
+    Objectif : Ce bloc permet de dessiner un trapeze
+    Méthode : On dessine un trapeze avec le module turtle
+    Besoins : cote, couleur et couleur2 (la couleur 2 c'est pour une éventuelle couleur de fond)
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : trapeze
+    Hypothèses : -
+    """
+    color(couleur, couleur2)
+    angle1 = 100
+    angle2 = 70
+    angle3 = 120
+    angle4 = 70
 
- # Fonction : trapeze
- # entree  
-def trapeze(a,b,c):
-    fd(a)
-    left(40)
-    fd(b)
-    left(90)
-    fd(c)
 
-#trapeze(20,30,40)
-#done()
+    forward(cote1)
+    right(angle1)
+    forward(cote2)
+    right(angle2)
+    forward(cote3)
+    right(angle3)
+    forward(cote4)
+
+def ellipse(r):
+    """
+    Commentaires de spécification
+    Bloc ellipse
+    Objectif : Ce bloc permet de dessiner un ellipse
+    Méthode : On dessine une ellipse avec le module turtle
+    Besoins : rayon
+    Connues : -
+    Entrées : -
+    Sorties : -
+    Résultats : ellipse
+    Hypothèses : -
+    """
+    for loop in range(2):
+        left(90)
+        circle(r/2,90)
